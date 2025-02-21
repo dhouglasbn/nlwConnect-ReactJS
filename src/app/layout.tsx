@@ -1,10 +1,10 @@
 import './globals.css'
-import type { Metadata } from "next";
+import type { Metadata } from 'next'
 import { Montserrat, Oxanium } from 'next/font/google'
 
 export const metadata: Metadata = {
-  title: "devstage"
-};
+  title: 'devstage',
+}
 
 // definindo como a gente vai usar as fontes no projeto
 const oxanium = Oxanium({
@@ -19,17 +19,16 @@ const montserrat = Montserrat({
   variable: '--font-montserrat', // a variável tailwind para aplicar a fonte
 })
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className={`${oxanium.variable} ${montserrat.variable}`}>
-      <body className='bg-gray-900 text-gray-100 antialiased'>
+      <body className="bg-gray-900 text-gray-100 antialiased bg-[url(/background.png)] bg-no-repeat bg-top md:bg-right-top">
         {children}
       </body>
     </html>
-  );
+  )
 }
