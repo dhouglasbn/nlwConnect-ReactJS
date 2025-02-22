@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import cooper from '../../assets/medal_cooper.svg'
-import gold from '../../assets/medal_gold.svg'
-import silver from '../../assets/medal_silver.svg'
+import cooper from '../../../assets/medal_cooper.svg'
+import gold from '../../../assets/medal_gold.svg'
+import silver from '../../../assets/medal_silver.svg'
 
 export function Ranking() {
   return (

@@ -2,8 +2,10 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight, Mail, User } from 'lucide-react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import { postSubscriptions } from '../../http/api'
 import { Button } from '../components/button'
 import { InputField, InputIcon, InputRoot } from '../components/input'
 
@@ -19,6 +21,9 @@ const subscriptionSchema = z.object({
 type SubscriptionSchema = z.infer<typeof subscriptionSchema>
 
 export function SubscriptionForm() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+
   // A forma nativa de tratar forms é deselegante
   // o react-hook-form permite a gente tratar o form da nossa forma
   const {
@@ -29,8 +34,12 @@ export function SubscriptionForm() {
     resolver: zodResolver(subscriptionSchema),
   })
 
-  function onSubscribe(data: SubscriptionSchema) {
-    console.log(data)
+  async function onSubscribe({ name, email }: SubscriptionSchema) {
+    const referrer = searchParams.get('referrer')
+
+    const { subscriberId } = await postSubscriptions({ name, email, referrer })
+
+    router.push(`/invite/${subscriberId}`)
   }
 
   return (
