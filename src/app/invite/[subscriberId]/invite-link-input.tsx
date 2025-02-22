@@ -1,5 +1,6 @@
 'use client'
 // Isso já indica que esse componente vai ser client component
+// 'use client' não permite funções assíncronas
 
 import { Copy, Link } from 'lucide-react'
 import { IconButton } from '../../components/icon-button'
