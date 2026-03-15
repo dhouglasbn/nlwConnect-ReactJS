@@ -4,6 +4,8 @@ import { InviteLinkInput } from './invite-link-input'
 import { Ranking } from './ranking'
 import { Stats } from './stats'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL
+
 interface InvitePageProps {
   params: Promise<{
     subscriberId: string
@@ -12,7 +14,7 @@ interface InvitePageProps {
 
 export default async function InvitePage(props: InvitePageProps) {
   const { subscriberId } = await props.params
-  const inviteLink = `http://localhost:3333/invites/${subscriberId}`
+  const inviteLink = `${API_URL}/invites/${subscriberId}`
 
   return (
     <div className="min-h-dvh flex items-center justify-between gap-16 flex-col md:flex-row">
