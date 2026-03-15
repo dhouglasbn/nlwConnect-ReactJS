@@ -1,34 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center">
+<br>
+CodeCraft
+</h1>
 
-## Getting Started
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License MIT">
+  </a>
+</p>
 
-First, run the development server:
+![CodeCraft Preview](https://i.imgur.com/nvcTQxT.png)
+
+CodeCraft Summit is a **React + Vite** application that allows users to register for an event and share registration links with friends. The platform features a **user leaderboard** showing the top link sharers and an **AI assistant** that provides insights into event registrations, link statistics, and more.
+
+---
+
+## Features
+
+- **User Registration:** Sign up for the CodeCraft Summit event.
+- **Link Sharing:** Send event registration links to friends.
+- **Leaderboard:** Track the top users who have shared the most links.
+- **AI Assistant:** Query registration data, link statistics, and more using AI-powered insights.
+
+---
+
+## Tech Stack
+
+- **Frontend:** React, Next.js, TypeScript, Tailwind CSS, PostCSS
+- **Backend:** Node.js, Google Gemini SDK
+- **API & Validation:** Orval, Zod
+- **Icons:** lucide-react
+
+---
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
+git clone https://github.com/yourusername/codecraft-summit.git
+cd codecraft-summit
+```
+2. Install dependencies:
+
+```
+npm install
+```
+3. Create a .env file in the root directory and add your environment variables (API keys, etc.):
+```
+NEXT_PUBLIC_API_URL=your_api_url
+GOOGLE_GEMINI_API_KEY=your_gemini_api_key
+```
+4. Run the development server:
+
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-## Learn More
+- Register for the event.
+- Share your unique registration link with friends.
+- Check the leaderboard for top link sharers.
+- Ask the AI assistant for insights about registrations and link statistics.
 
-To learn more about Next.js, take a look at the following resources:
+## Folder Structure
+```
+codecraft-summit/
+├─ public/
+├─ src/
+│  ├─ components/   # Reusable UI components
+│  ├─ pages/        # Next.js pages
+│  ├─ hooks/        # Custom hooks
+│  ├─ services/     # API calls
+│  ├─ utils/        # Utility functions
+├─ package.json
+├─ tsconfig.json
+└─ tailwind.config.js
+```
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contributions are welcome! Open an issue or submit a pull request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT License](https://opensource.org/licenses/MIT)
